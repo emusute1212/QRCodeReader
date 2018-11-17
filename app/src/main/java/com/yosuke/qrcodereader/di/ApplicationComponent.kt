@@ -1,6 +1,7 @@
 package com.yosuke.qrcodereader.di
 
 import com.yosuke.qrcodereader.QrCodeApp
+import com.yosuke.qrcodereader.di.module.MainActivityModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -9,7 +10,8 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [
-    AndroidSupportInjectionModule::class
+    AndroidSupportInjectionModule::class,
+    MainActivityModule::class
 ])
 interface ApplicationComponent : AndroidInjector<QrCodeApp> {
     @Component.Builder
