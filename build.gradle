@@ -1,0 +1,41 @@
+project.ext.set("compileSdkVersion", 28)
+project.ext.set("buildToolsVersion", "27.0.3")
+project.ext.set("supportLibVersion", "27.1.1")
+project.ext.set("minSdkVersion", 22)
+project.ext.set("targetSdkVersion", 22)
+project.ext.set("rxandroidVersion", "2.0.2")
+project.ext.set("dagger2Version", "2.16")
+project.ext.set("architectureComponentsVersion", "1.1.1")
+project.ext.set("kotshiVersion", "1.0.3")
+project.ext.set("threetenabpVersion", "1.1.0")
+project.ext.set("kotlinCoroutineVersion", "0.22.5")
+
+buildscript {
+    ext.androidGradlePluginVersion = "3.1.4"
+    ext.kotlin_version = '1.2.71'
+    ext.lifecycle_version = "1.1.1"
+    repositories {
+        google()
+        maven { url 'https://jitpack.io' }
+        maven { url "https://plugins.gradle.org/m2/" }
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$androidGradlePluginVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
+        classpath "com.android.support:support-core-utils:28.0.0"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        maven { url 'https://jitpack.io' }
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
