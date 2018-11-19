@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">QRCodeReader</string>
+    <string name="read_qrcode">QRコードを読み込む</string>
+    <string name="make_qrcode">QRコードを作る</string>
 </resources>
