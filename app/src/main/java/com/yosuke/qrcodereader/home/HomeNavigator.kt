@@ -1,13 +1,14 @@
 package com.yosuke.qrcodereader.home
 
 import android.widget.Toast
+import com.yosuke.qrcodereader.reader.QrCodeReadActivity
 import javax.inject.Inject
 
 class HomeNavigator @Inject constructor(
         private val mainActivity: MainActivity
 ) {
     fun goToReadQrCode() {
-        Toast.makeText(mainActivity, "Go to read qr code.", Toast.LENGTH_SHORT).show()
+        QrCodeReadActivity.startActivity(mainActivity)
     }
 
     fun goToMakeQrCode() {
