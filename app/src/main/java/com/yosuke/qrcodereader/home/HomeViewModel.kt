@@ -1,20 +1,21 @@
 package com.yosuke.qrcodereader.home
 
 import android.arch.lifecycle.ViewModel
-import android.util.Log
 import javax.inject.Inject
 
-class HomeViewModel @Inject constructor() : ViewModel() {
+class HomeViewModel @Inject constructor(
+        private val homeNavigator: HomeNavigator
+) : ViewModel() {
     companion object {
         val TAG: String
             get() = HomeViewModel::class.java.simpleName
     }
 
     fun goToReadQrCode() {
-        Log.d(TAG, "Go to ReadQrCode.")
+        homeNavigator.goToReadQrCode()
     }
 
     fun goToMakeQrCode() {
-        Log.d(TAG, "Go to MakeQrCode")
+        homeNavigator.goToMakeQrCode()
     }
 }
