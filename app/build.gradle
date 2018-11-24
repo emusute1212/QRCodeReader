@@ -66,4 +66,6 @@ dependencies {
     kaptAndroidTest "com.google.dagger:dagger-android-processor:$dagger2Version"
     kapt "com.google.dagger:dagger-compiler:$dagger2Version"
     kaptAndroidTest "com.google.dagger:dagger-compiler:$dagger2Version"
+
+    implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
 }
