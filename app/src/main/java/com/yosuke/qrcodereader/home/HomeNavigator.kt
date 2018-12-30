@@ -1,6 +1,6 @@
 package com.yosuke.qrcodereader.home
 
-import android.widget.Toast
+import com.yosuke.qrcodereader.generator.GeneratorActivity
 import com.yosuke.qrcodereader.reader.QrCodeReadActivity
 import javax.inject.Inject
 
@@ -12,6 +12,6 @@ class HomeNavigator @Inject constructor(
     }
 
     fun goToGenerateQrCode() {
-        Toast.makeText(mainActivity, "Go to make qr code.", Toast.LENGTH_SHORT).show()
+        GeneratorActivity.startActivity(mainActivity)
     }
 }
