@@ -1,11 +1,24 @@
 package com.yosuke.qrcodereader.di.module
 
+import android.arch.lifecycle.ViewModel
+import com.yosuke.qrcodereader.di.ViewModelKey
 import com.yosuke.qrcodereader.reader.QrCodeReadActivity
+import com.yosuke.qrcodereader.reader.QrCodeReadViewModel
+import dagger.Binds
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
+import dagger.multibindings.IntoMap
 
 @Module
 interface QrCodeReadActivityModule {
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(modules = [QrCodeReadViewModelModule::class])
     fun contributeQrCodeReadActivity(): QrCodeReadActivity
+}
+
+@Module
+abstract class QrCodeReadViewModelModule {
+    @Binds
+    @IntoMap
+    @ViewModelKey(QrCodeReadViewModel::class)
+    abstract fun provideQrCodeReadViewModel(viewModel: QrCodeReadViewModel): ViewModel
 }
