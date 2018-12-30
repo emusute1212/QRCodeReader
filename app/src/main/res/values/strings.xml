@@ -3,4 +3,7 @@
     <string name="read_qrcode">QRコードを読み込む</string>
     <string name="make_qrcode">QRコードを作る</string>
     <string name="move_browser_button">ブラウザで開く</string>
+    <string name="qrcode_save">保存する</string>
+    <string name="qrcode_text_hint">QRCodeにしたい文字を入力</string>
+    <string name="qrcode_generetor_button">QRコード作成</string>
 </resources>
