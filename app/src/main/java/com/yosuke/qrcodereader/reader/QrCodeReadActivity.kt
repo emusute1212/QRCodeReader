@@ -43,7 +43,6 @@ class QrCodeReadActivity : DaggerAppCompatActivity() {
         val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
                 ?: return
         if (result.contents != null) {
-            Toast.makeText(this, "Scanned: ${result.contents}", Toast.LENGTH_LONG).show()
             ViewModelProviders.of(this, viewModelFactory).get(QrCodeReadViewModel::class.java).setReadText(result.contents)
         } else {
             finish()
