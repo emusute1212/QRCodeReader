@@ -1,6 +1,7 @@
 package com.yosuke.qrcodereader.di
 
 import com.yosuke.qrcodereader.QrCodeApp
+import com.yosuke.qrcodereader.di.module.GeneratorActivityModule
 import com.yosuke.qrcodereader.di.module.MainActivityModule
 import com.yosuke.qrcodereader.di.module.QrCodeReadActivityModule
 import com.yosuke.qrcodereader.di.module.ViewModelModule
@@ -15,6 +16,7 @@ import javax.inject.Singleton
     AndroidSupportInjectionModule::class,
     MainActivityModule::class,
     QrCodeReadActivityModule::class,
+    GeneratorActivityModule::class,
     ViewModelModule::class
 ])
 interface ApplicationComponent : AndroidInjector<QrCodeApp> {
