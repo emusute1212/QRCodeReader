@@ -10,6 +10,10 @@ import dagger.android.support.DaggerAppCompatActivity
 
 
 class QrCodeReadActivity : DaggerAppCompatActivity() {
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         IntentIntegrator(this).also {
@@ -42,7 +46,7 @@ class QrCodeReadActivity : DaggerAppCompatActivity() {
 }
 
 /**
- * QRコード読み取り画面が横に固定されないようにするために作成したクラス。
+ * QRコード読み取り画面が横に固定されないようにするために作成したクラス
  * [参考](https://qiita.com/alingogo/items/3006e5685057c23db6bd)
  */
-class CaptureActivityAnyOrientation : CaptureActivity() {}
+class CaptureActivityAnyOrientation : CaptureActivity()
