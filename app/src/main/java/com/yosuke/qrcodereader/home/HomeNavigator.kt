@@ -11,7 +11,7 @@ class HomeNavigator @Inject constructor(
         QrCodeReadActivity.startActivity(mainActivity)
     }
 
-    fun goToMakeQrCode() {
+    fun goToGenerateQrCode() {
         Toast.makeText(mainActivity, "Go to make qr code.", Toast.LENGTH_SHORT).show()
     }
 }
