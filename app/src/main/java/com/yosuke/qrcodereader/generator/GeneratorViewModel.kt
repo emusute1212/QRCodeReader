@@ -14,6 +14,7 @@ import javax.inject.Inject
 
 
 class GeneratorViewModel @Inject constructor(
+        private val navigator: GeneratorNavigator
 ) : ViewModel() {
     val qrCodeStr = ObservableField<String>()
     val qrCode = ObservableField<Bitmap>()
@@ -23,6 +24,11 @@ class GeneratorViewModel @Inject constructor(
         launch { qrCode.set(encode()) }
         navigator.viewQrCodeDialog()
     }
+
+    fun onSaveButton(image: Bitmap) {
+        navigator.save(image)
+    }
+
     //TODO:エンコードは別の層で行う
     private fun encode(): Bitmap {
         //異なる型の値を入れるためgenericは使えない
