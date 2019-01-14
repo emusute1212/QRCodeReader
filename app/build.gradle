@@ -68,4 +68,6 @@ dependencies {
     kaptAndroidTest "com.google.dagger:dagger-compiler:$dagger2Version"
 
     implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
+
+    implementation 'com.jakewharton.threetenabp:threetenabp:1.1.1'
 }
