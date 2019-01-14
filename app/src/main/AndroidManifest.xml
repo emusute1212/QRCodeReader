@@ -3,6 +3,8 @@
 
     <!--カメラのパーミッション-->
     <uses-permission android:name="android.permission.CAMERA" />
+    <!--外部ストレージ書き込みのパーミッション-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name="com.yosuke.qrcodereader.QrCodeApp"

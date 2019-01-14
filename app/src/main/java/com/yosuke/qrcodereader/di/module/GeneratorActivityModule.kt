@@ -11,7 +11,10 @@ import dagger.multibindings.IntoMap
 
 @Module
 interface GeneratorActivityModule {
-    @ContributesAndroidInjector(modules = [GeneratorViewModelModule::class])
+    @ContributesAndroidInjector(modules = [
+        GeneratorViewModelModule::class,
+        QrCodeViewDialogFragmentModule::class
+    ])
     fun contoributeGeneratorActivity(): GeneratorActivity
 }
 
