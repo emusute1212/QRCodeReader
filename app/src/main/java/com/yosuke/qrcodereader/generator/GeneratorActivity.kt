@@ -25,6 +25,10 @@ class GeneratorActivity : DaggerAppCompatActivity() {
         binding.viewModel = viewModel
     }
 
+    fun viewDialog() {
+        QrCodeViewDialogFragment.newInstance().show(supportFragmentManager, QrCodeViewDialogFragment.FRAGMENT_TAG)
+    }
+
     companion object {
         private fun createIntent(context: Context): Intent {
             return Intent(context, GeneratorActivity::class.java)
