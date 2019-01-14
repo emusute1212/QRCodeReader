@@ -6,4 +6,7 @@ import android.support.annotation.WorkerThread
 interface QrCodeRepository {
     @WorkerThread
     fun saveImage(image: Bitmap): Boolean
+
+    @WorkerThread
+    fun encodeQrCode(text: String): Bitmap
 }
