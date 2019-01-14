@@ -1,10 +1,7 @@
 package com.yosuke.qrcodereader.di
 
 import com.yosuke.qrcodereader.QrCodeApp
-import com.yosuke.qrcodereader.di.module.GeneratorActivityModule
-import com.yosuke.qrcodereader.di.module.MainActivityModule
-import com.yosuke.qrcodereader.di.module.QrCodeReadActivityModule
-import com.yosuke.qrcodereader.di.module.ViewModelModule
+import com.yosuke.qrcodereader.di.module.*
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -17,6 +14,7 @@ import javax.inject.Singleton
     MainActivityModule::class,
     QrCodeReadActivityModule::class,
     GeneratorActivityModule::class,
+    RepositoryModule::class,
     ViewModelModule::class
 ])
 interface ApplicationComponent : AndroidInjector<QrCodeApp> {
