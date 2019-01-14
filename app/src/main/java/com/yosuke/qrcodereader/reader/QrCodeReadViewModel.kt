@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModel
 import android.databinding.ObservableField
 import android.net.Uri
 import android.webkit.URLUtil
+import com.yosuke.qrcodereader.QrCodeReadNavigator
 import javax.inject.Inject
 
 class QrCodeReadViewModel @Inject constructor(

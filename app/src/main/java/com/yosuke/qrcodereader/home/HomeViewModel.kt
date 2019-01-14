@@ -1,6 +1,7 @@
 package com.yosuke.qrcodereader.home
 
 import android.arch.lifecycle.ViewModel
+import com.yosuke.qrcodereader.HomeNavigator
 import javax.inject.Inject
 
 class HomeViewModel @Inject constructor(

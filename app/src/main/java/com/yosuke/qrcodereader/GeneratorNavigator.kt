@@ -1,8 +1,9 @@
-package com.yosuke.qrcodereader.generator
+package com.yosuke.qrcodereader
 
 import android.graphics.Bitmap
 import android.widget.Toast
 import com.yosuke.qrcodereader.data.repository.QrCodeRepository
+import com.yosuke.qrcodereader.generator.GeneratorActivity
 import kotlinx.coroutines.experimental.CommonPool
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch

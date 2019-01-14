@@ -1,7 +1,8 @@
-package com.yosuke.qrcodereader.reader
+package com.yosuke.qrcodereader
 
 import android.content.Intent
 import android.net.Uri
+import com.yosuke.qrcodereader.reader.QrCodeReadActivity
 import javax.inject.Inject
 
 class QrCodeReadNavigator @Inject constructor(
