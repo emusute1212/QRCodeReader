@@ -1,6 +1,7 @@
 package com.yosuke.qrcodereader.di.module
 
 import android.arch.lifecycle.ViewModel
+import android.support.v7.app.AppCompatActivity
 import com.yosuke.qrcodereader.di.ViewModelKey
 import com.yosuke.qrcodereader.home.HomeViewModel
 import com.yosuke.qrcodereader.home.MainActivity
@@ -17,6 +18,9 @@ interface MainActivityModule {
 
 @Module
 abstract class MainViewModelModule {
+    @Binds
+    abstract fun providesAppCompatActivity(mainActivity: MainActivity): AppCompatActivity
+
     @Binds
     @IntoMap
     @ViewModelKey(HomeViewModel::class)

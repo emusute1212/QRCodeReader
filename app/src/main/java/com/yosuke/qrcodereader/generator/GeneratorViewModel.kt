@@ -3,14 +3,14 @@ package com.yosuke.qrcodereader.generator
 import android.arch.lifecycle.ViewModel
 import android.databinding.ObservableField
 import android.graphics.Bitmap
-import com.yosuke.qrcodereader.GeneratorNavigator
+import com.yosuke.qrcodereader.NavigationController
 import com.yosuke.qrcodereader.data.repository.QrCodeRepository
 import kotlinx.coroutines.experimental.launch
 import javax.inject.Inject
 
 
 class GeneratorViewModel @Inject constructor(
-        private val navigator: GeneratorNavigator,
+        private val navigator: NavigationController,
         private val repository: QrCodeRepository
 ) : ViewModel() {
     val qrCodeStr = ObservableField<String>()

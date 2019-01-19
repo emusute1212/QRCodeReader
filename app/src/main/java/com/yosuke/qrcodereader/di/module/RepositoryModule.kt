@@ -6,7 +6,8 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-class RepositoryModule {
+object RepositoryModule {
     @Provides
+    @JvmStatic
     fun provideQrCodeRepository(): QrCodeRepository = QrCodeDataRepository()
 }

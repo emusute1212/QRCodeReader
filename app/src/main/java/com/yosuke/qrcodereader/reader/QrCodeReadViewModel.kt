@@ -4,11 +4,11 @@ import android.arch.lifecycle.ViewModel
 import android.databinding.ObservableField
 import android.net.Uri
 import android.webkit.URLUtil
-import com.yosuke.qrcodereader.QrCodeReadNavigator
+import com.yosuke.qrcodereader.NavigationController
 import javax.inject.Inject
 
 class QrCodeReadViewModel @Inject constructor(
-        private val navigator: QrCodeReadNavigator
+        private val navigator: NavigationController
 ) : ViewModel() {
 
     val readText = ObservableField<String>()
