@@ -4,6 +4,7 @@ import android.graphics.Bitmap
 import android.widget.Toast
 import com.yosuke.qrcodereader.data.repository.QrCodeRepository
 import com.yosuke.qrcodereader.generator.GeneratorActivity
+import com.yosuke.qrcodereader.generator.QrCodeViewDialogFragment
 import kotlinx.coroutines.experimental.CommonPool
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch
@@ -15,7 +16,7 @@ class GeneratorNavigator @Inject constructor(
         private val repository: QrCodeRepository
 ) {
     fun viewQrCodeDialog() {
-        activity.viewDialog()
+        QrCodeViewDialogFragment.newInstance().show(activity.supportFragmentManager, QrCodeViewDialogFragment.FRAGMENT_TAG)
     }
 
     fun save(image: Bitmap) {
