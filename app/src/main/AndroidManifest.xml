@@ -1,21 +1,39 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yosuke.qrcodereader">
 
+    <!--カメラのパーミッション-->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--外部ストレージ書き込みのパーミッション-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:name="com.yosuke.qrcodereader.QrCodeApp"
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:label="@string/app_name"
-            android:name="com.yosuke.qrcodereader.home.MainActivity">
+            android:name="com.yosuke.qrcodereader.home.MainActivity"
+            android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                    <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.yosuke.qrcodereader.reader.QrCodeReadActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.yosuke.qrcodereader.generator.GeneratorActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.yosuke.qrcodereader.reader.CaptureActivityAnyOrientation"
+            android:screenOrientation="fullSensor"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
     </application>
 </manifest>
