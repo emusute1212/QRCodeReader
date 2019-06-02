@@ -1,8 +1,11 @@
 package com.yosuke.qrcodereader.data
 
+import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Color
+import android.media.MediaScannerConnection
 import android.os.Environment
+import android.webkit.MimeTypeMap
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.EncodeHintType
 import com.google.zxing.qrcode.QRCodeWriter
@@ -17,17 +20,20 @@ object QrCodeExporter {
     private val BASE_DIR_PATH = Environment.getExternalStorageDirectory().path
     private val BASE_DIR = File(BASE_DIR_PATH)
     private const val SAVE_DIR_PATH = "QR_CODE"
-    val SAVE_DIR = File(BASE_DIR, SAVE_DIR_PATH)
-    const val IMAGE_EXT = ".png"
+    private val SAVE_DIR = File(BASE_DIR, SAVE_DIR_PATH)
+    private const val IMAGE_EXT = ".png"
 
-    fun exportFile(image: Bitmap): Boolean {
+    fun exportFile(context: Context, image: Bitmap): Boolean {
         if (!SAVE_DIR.exists()) SAVE_DIR.mkdirs()
         var result = false
-        File(SAVE_DIR, ZonedDateTime.now().toStringForFileName().plus(IMAGE_EXT)).outputStream().use {
-            result = image.compress(Bitmap.CompressFormat.PNG, 100, it)
-            it.fd.sync()
-            it.flush()
+        val file = File(SAVE_DIR, ZonedDateTime.now().toStringForFileName().plus(IMAGE_EXT)).also { file ->
+            file.outputStream().use {
+                result = image.compress(Bitmap.CompressFormat.PNG, 100, it)
+                it.fd.sync()
+                it.flush()
+            }
         }
+        addGallery(context, file)
         return result
     }
 
@@ -57,5 +63,17 @@ object QrCodeExporter {
         return Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888).apply {
             setPixels(pixels, 0, width, 0, 0, width, height)
         }
+    }
+
+    private fun getMimeType(file: File): String {
+        return MimeTypeMap.getFileExtensionFromUrl(file.absolutePath)?.let { fileExtension ->
+            MimeTypeMap.getSingleton().getMimeTypeFromExtension(fileExtension.toLowerCase())
+        } ?: ""
+    }
+
+    private fun addGallery(context: Context, file: File) {
+        val paths = arrayOf(file.absolutePath)
+        val mimeTypes = arrayOf(getMimeType(file))
+        MediaScannerConnection.scanFile(context, paths, mimeTypes, null)
     }
 }

@@ -32,22 +32,30 @@ class QrCodeReadActivity : DaggerAppCompatActivity() {
         //画面回転やActivity再生時などはスキャン画面へ移行しない
         if (savedInstanceState == null) {
             IntentIntegrator(this).also {
-                it.setOrientationLocked(false)
+                //画面の向きの固定
+                it.setOrientationLocked(true)
+                //ビープ音の削除
+                it.setBeepEnabled(false)
+                //activityの指定
                 it.captureActivity = CaptureActivityAnyOrientation::class.java
                 it.initiateScan()
             }
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
-        val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
-                ?: return
-        if (result.contents != null) {
-            ViewModelProviders.of(this, viewModelFactory).get(QrCodeReadViewModel::class.java).setReadText(result.contents)
-        } else {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (resultCode == RESULT_CANCELED || data == null) {
             finish()
             Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show()
+            return
         }
+        val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+        if (result == null || result.contents == null) {
+            finish()
+            Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show()
+            return
+        }
+        ViewModelProviders.of(this, viewModelFactory).get(QrCodeReadViewModel::class.java).setReadText(result.contents)
     }
 
     companion object {
