@@ -21,7 +21,8 @@ class QrCodeReadViewModel @Inject constructor(
         navigator.openBrowser(Uri.parse(readText.get()))
     }
 
-    fun isUrl(target: String): Boolean {
+    fun isUrl(target: String?): Boolean {
+        if (target == null) return false
         return URLUtil.isValidUrl(target)
     }
 
