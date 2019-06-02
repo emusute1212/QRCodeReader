@@ -1,5 +1,6 @@
 package com.yosuke.qrcodereader.di.module
 
+import com.yosuke.qrcodereader.QrCodeApp
 import com.yosuke.qrcodereader.data.repository.QrCodeDataRepository
 import com.yosuke.qrcodereader.data.repository.QrCodeRepository
 import dagger.Module
@@ -9,5 +10,5 @@ import dagger.Provides
 object RepositoryModule {
     @Provides
     @JvmStatic
-    fun provideQrCodeRepository(): QrCodeRepository = QrCodeDataRepository()
+    fun provideQrCodeRepository(app: QrCodeApp): QrCodeRepository = QrCodeDataRepository(app)
 }
