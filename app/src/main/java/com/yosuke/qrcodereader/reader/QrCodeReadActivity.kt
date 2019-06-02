@@ -43,15 +43,19 @@ class QrCodeReadActivity : DaggerAppCompatActivity() {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
-        val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
-                ?: return
-        if (result.contents != null) {
-            ViewModelProviders.of(this, viewModelFactory).get(QrCodeReadViewModel::class.java).setReadText(result.contents)
-        } else {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (resultCode == RESULT_CANCELED || data == null) {
             finish()
             Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show()
+            return
         }
+        val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+        if (result == null || result.contents == null) {
+            finish()
+            Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show()
+            return
+        }
+        ViewModelProviders.of(this, viewModelFactory).get(QrCodeReadViewModel::class.java).setReadText(result.contents)
     }
 
     companion object {
