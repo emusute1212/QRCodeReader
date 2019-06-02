@@ -8,8 +8,7 @@ class HomeViewModel @Inject constructor(
         private val homeNavigator: NavigationController
 ) : ViewModel() {
     companion object {
-        val TAG: String
-            get() = HomeViewModel::class.java.simpleName
+        private val TAG = HomeViewModel::class.java.simpleName
     }
 
     fun goToReadQrCode() {

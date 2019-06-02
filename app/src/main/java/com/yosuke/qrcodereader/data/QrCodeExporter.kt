@@ -17,8 +17,8 @@ object QrCodeExporter {
     private val BASE_DIR_PATH = Environment.getExternalStorageDirectory().path
     private val BASE_DIR = File(BASE_DIR_PATH)
     private const val SAVE_DIR_PATH = "QR_CODE"
-    val SAVE_DIR = File(BASE_DIR, SAVE_DIR_PATH)
-    const val IMAGE_EXT = ".png"
+    private val SAVE_DIR = File(BASE_DIR, SAVE_DIR_PATH)
+    private const val IMAGE_EXT = ".png"
 
     fun exportFile(image: Bitmap): Boolean {
         if (!SAVE_DIR.exists()) SAVE_DIR.mkdirs()
