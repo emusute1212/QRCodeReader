@@ -32,7 +32,11 @@ class QrCodeReadActivity : DaggerAppCompatActivity() {
         //画面回転やActivity再生時などはスキャン画面へ移行しない
         if (savedInstanceState == null) {
             IntentIntegrator(this).also {
-                it.setOrientationLocked(false)
+                //画面の向きの固定
+                it.setOrientationLocked(true)
+                //ビープ音の削除
+                it.setBeepEnabled(false)
+                //activityの指定
                 it.captureActivity = CaptureActivityAnyOrientation::class.java
                 it.initiateScan()
             }
