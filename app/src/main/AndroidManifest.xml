@@ -17,7 +17,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name="com.yosuke.qrcodereader.home.MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/home_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -25,10 +25,18 @@
         </activity>
         <activity
             android:name="com.yosuke.qrcodereader.reader.QrCodeReadActivity"
-            android:label="@string/app_name" />
+            android:label="@string/read_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.yosuke.qrcodereader.home.MainActivity" />
+        </activity>
         <activity
             android:name="com.yosuke.qrcodereader.generator.GeneratorActivity"
-            android:label="@string/app_name" />
+            android:label="@string/generate_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.yosuke.qrcodereader.home.MainActivity" />
+        </activity>
         <activity
             android:name="com.yosuke.qrcodereader.reader.CaptureActivityAnyOrientation"
             android:screenOrientation="portrait"
