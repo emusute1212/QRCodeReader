@@ -1,7 +1,7 @@
 package com.yosuke.qrcodereader.di.module
 
-import android.arch.lifecycle.ViewModel
-import android.support.v7.app.AppCompatActivity
+import androidx.lifecycle.ViewModel
+import androidx.appcompat.app.AppCompatActivity
 import com.yosuke.qrcodereader.di.ViewModelKey
 import com.yosuke.qrcodereader.home.HomeViewModel
 import com.yosuke.qrcodereader.home.MainActivity

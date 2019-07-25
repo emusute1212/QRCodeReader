@@ -1,7 +1,7 @@
 package com.yosuke.qrcodereader.reader
 
-import android.arch.lifecycle.ViewModel
-import android.databinding.ObservableField
+import androidx.lifecycle.ViewModel
+import androidx.databinding.ObservableField
 import android.net.Uri
 import android.webkit.URLUtil
 import com.yosuke.qrcodereader.NavigationController

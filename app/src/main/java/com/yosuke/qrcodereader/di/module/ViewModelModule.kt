@@ -1,6 +1,6 @@
 package com.yosuke.qrcodereader.di.module
 
-import android.arch.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProvider
 import com.yosuke.qrcodereader.ViewModelFactory
 import dagger.Binds
 import dagger.Module
