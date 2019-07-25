@@ -1,7 +1,7 @@
 package com.yosuke.qrcodereader.data.repository
 
 import android.graphics.Bitmap
-import android.support.annotation.WorkerThread
+import androidx.annotation.WorkerThread
 
 interface QrCodeRepository {
     @WorkerThread

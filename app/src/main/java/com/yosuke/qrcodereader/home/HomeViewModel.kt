@@ -1,6 +1,6 @@
 package com.yosuke.qrcodereader.home
 
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 import com.yosuke.qrcodereader.NavigationController
 import javax.inject.Inject
 

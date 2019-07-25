@@ -1,6 +1,6 @@
 package com.yosuke.qrcodereader.ext
 
-import android.databinding.BindingAdapter
+import androidx.databinding.BindingAdapter
 import android.graphics.Bitmap
 import android.widget.ImageView
 
