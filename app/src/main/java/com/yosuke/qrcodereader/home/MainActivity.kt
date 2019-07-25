@@ -1,8 +1,8 @@
 package com.yosuke.qrcodereader.home
 
-import android.arch.lifecycle.ViewModelProvider
-import android.arch.lifecycle.ViewModelProviders
-import android.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
 import com.yosuke.qrcodereader.R
 import com.yosuke.qrcodereader.databinding.ActivityMainBinding
