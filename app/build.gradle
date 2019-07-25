@@ -70,5 +70,5 @@ dependencies {
 
     implementation 'com.jakewharton.threetenabp:threetenabp:1.1.1'
 
-    implementation "com.android.support:recyclerview-v7:${project.supportLibVersion}"
+    implementation "androidx.recyclerview:recyclerview:1.0.0"
 }
