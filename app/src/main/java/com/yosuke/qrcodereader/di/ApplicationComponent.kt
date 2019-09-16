@@ -14,7 +14,9 @@ import javax.inject.Singleton
     MainActivityModule::class,
     QrCodeReadActivityModule::class,
     GeneratorActivityModule::class,
+    QrCodeReaderFromPictureActivityModule::class,
     RepositoryModule::class,
+    UsecaseModule::class,
     ViewModelModule::class
 ])
 interface ApplicationComponent : AndroidInjector<QrCodeApp> {

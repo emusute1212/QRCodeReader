@@ -18,4 +18,8 @@ class HomeViewModel @Inject constructor(
     fun goToMakeQrCode() {
         homeNavigator.goToGenerateQrCode()
     }
+
+    fun goToQrCodeReaderFromPicture() {
+        homeNavigator.goToQrCodeReaderFromPicture()
+    }
 }

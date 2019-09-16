@@ -38,6 +38,13 @@
                 android:value="com.yosuke.qrcodereader.home.MainActivity" />
         </activity>
         <activity
+            android:name="com.yosuke.qrcodereader.picture.QrCodeReaderFromPictureActivity"
+            android:label="@string/read_picture_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.yosuke.qrcodereader.home.MainActivity" />
+        </activity>
+        <activity
             android:name="com.yosuke.qrcodereader.reader.CaptureActivityAnyOrientation"
             android:screenOrientation="portrait"
             android:stateNotNeeded="true"

@@ -14,6 +14,8 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
+import androidx.core.app.ActivityCompat.startActivityForResult
+import com.yosuke.qrcodereader.picture.QrCodeReaderFromPictureActivity
 
 class NavigationController @Inject constructor(
         private val activity: AppCompatActivity,
@@ -26,6 +28,10 @@ class NavigationController @Inject constructor(
 
     fun goToGenerateQrCode() {
         GeneratorActivity.startActivity(activity)
+    }
+
+    fun goToQrCodeReaderFromPicture(){
+        QrCodeReaderFromPictureActivity.startActivity(activity)
     }
 
     fun openBrowser(uri: Uri) {

@@ -2,6 +2,7 @@
     <string name="app_name">QRCodeReader</string>
     <string name="home_name">QRコードリーダー</string>
     <string name="generate_name">QRコード作成</string>
+    <string name="read_picture_name">QRコード選択</string>
     <string name="read_name">QRコード読み込み結果</string>
     <string name="read_qrcode">QRコードを読み込む</string>
     <string name="make_qrcode">QRコードを作る</string>
